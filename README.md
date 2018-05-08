@@ -1,3 +1,6 @@
 # Bachelorthesis_GeoPDE_NURBS
 
-Description
+### Questions and Answers
+
+#### Q: What are internal degrees of freedom?
+#### A: no Answer yet
