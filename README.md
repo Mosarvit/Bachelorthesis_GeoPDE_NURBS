@@ -2,15 +2,15 @@
 
 ## Questions and Answers
 
-#### Q: What are internal degrees of freedom?
-#### A: no Answer yet
+**Q:** What are internal degrees of freedom?<br/>
+**A:** no Answer yet
 
-#### Q: What is the aim of the optimization, when is the field considered "ideal"?
-#### A: no Answer yet
+**Q:** What is the aim of the optimization, when is the field considered "ideal"?<br/>
+**A:** no Answer yet
 
-#### Q: What are the mathematical details, that are relevant for the optimization problem?
-#### Possbile Answer: moving the knots 
-#### A: no Answer yet
+**Q:** What are the mathematical details, that are relevant for the optimization problem?<br/>
+**Possbile Answer:** moving the knots<br/>
+**A**: no Answer yet
 
 ## Timescedule
 
