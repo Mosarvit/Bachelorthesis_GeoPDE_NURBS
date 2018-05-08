@@ -12,6 +12,9 @@
 **Possbile Answer:** moving the knots<br/>
 **A**: no Answer yet
 
+**Q:** Why does the multiplicity of the knot vector lower the level of continuity at this point?<br/>
+**A**: no Answer yet
+
 ## Timescedule
 
 #### 16.05. after 14:00 - Meeting with Peter and Jack at Dolivostr. 
