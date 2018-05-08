@@ -5,6 +5,13 @@
 #### Q: What are internal degrees of freedom?
 #### A: no Answer yet
 
+#### Q: What is the aim of the optimization, when is the field considered "ideal"?
+#### A: no Answer yet
+
+#### Q: What are the mathematical details, that are relevant for the optimization problem?
+#### Possbile Answer: moving the knots 
+#### A: no Answer yet
+
 ## Timescedule
 
 #### 16.05. after 14:00 - Meeting with Peter and Jack at Dolivostr. 
