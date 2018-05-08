@@ -15,6 +15,9 @@
 **Q:** Why does the multiplicity of the knot vector lower the level of continuity at this point?<br/>
 **A**: no Answer yet
 
+**Q:** The provided pierce_gun_complete.igs is just a cartesian mesh and not a nurbs mesh, is that right?<br/>
+**A**: no Answer yet
+
 ## Timescedule
 
 #### 16.05. after 14:00 - Meeting with Peter and Jack at Dolivostr. 
