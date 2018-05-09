@@ -19,6 +19,17 @@
 **Considerations:** The ParameterData array extracted by the igesToolBox has some cells, that are nurbs, with fields, of which some could be interpreted as as nurbs and therefore converted<br/>
 **A**: no Answer yet
 
+**Q:** Will I be provided with a particle tracker?<br/>
+**A**: no Answer yet
+
+**Q:** So far I have no way to validate my solutions, since an anlytic solution cannot be obtained. Shozld I possibly calidate against an existing simulation?<br/>
+**A**: no Answer yet
+
+**Q:** ?<br/>
+**A**: no Answer yet
+
+
+
 ## ToDo
 
 ####  Before meeting Jack
