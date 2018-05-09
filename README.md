@@ -25,7 +25,7 @@
 **Q:** So far I have no way to validate my solutions, since an anlytic solution cannot be obtained. Shozld I possibly calidate against an existing simulation?<br/>
 **A**: no Answer yet
 
-**Q:** Will the geometry be constructed as multi  or single? patch<br/>
+**Q:** Will the geometry be constructed as multi  or single patch?<br/>
 **A**: no Answer yet
 
 **Q:** ?<br/>
