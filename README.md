@@ -19,6 +19,14 @@
 **Considerations:** The ParameterData array extracted by the igesToolBox has some cells, that are nurbs, with fields, of which some could be interpreted as as nurbs and therefore converted<br/>
 **A**: no Answer yet
 
+## ToDo
+
+####  Before meeting Jack
+- [ ] Make a sampel Simulation of what is described in Chapter 4.3. 
+- [ ] Make a sampel Simulation of a multi-patch problem described in Chapter 5 
+####  After meeting Jack
+- [ ] Import pierce_gun_complete.igs 
+
 ## Timescedule
 
 #### 16.05. after 14:00 - Meeting with Peter and Jack at Dolivostr. 
