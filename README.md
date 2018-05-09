@@ -9,13 +9,14 @@
 **A:** no Answer yet
 
 **Q:** What are the mathematical details, that are relevant for the optimization problem?<br/>
-**Possbile Answer:** moving the knots<br/>
+**Considerations:** moving the knots<br/>
 **A**: no Answer yet
 
 **Q:** Why does the multiplicity of the knot vector lower the level of continuity at this point?<br/>
 **A**: no Answer yet
 
 **Q:** The provided pierce_gun_complete.igs is just a cartesian mesh and not a nurbs mesh, is that right?<br/>
+**Considerations:** The ParameterData array extracted by the igesToolBox has some cells, that are nurbs, with fields, of which some could be interpreted as as nurbs and therefore converted<br/>
 **A**: no Answer yet
 
 ## Timescedule
