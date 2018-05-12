@@ -30,6 +30,18 @@
 
 **Q:** ?<br/>
 **A**: no Answer yet
+
+### Classes
+ 
+**msh** = msh_cartesian (knots , qn, qw, **geometry**) % quadrature rule : the points where we want to evaluate the function. qn, qw could be gauss nodes, for instance
+
+**space** = sp_nurbs (**geometry**.nurbs, **msh**) % information to compute the basis functions of the descrete space V_h
+
+**geometry** : information to evaluate **F** and its derivatives
+
+### Functions
+
+function 
  
 ## Timescedule
 
