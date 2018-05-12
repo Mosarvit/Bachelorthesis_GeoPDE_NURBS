@@ -35,7 +35,7 @@
  
 **msh** = msh_cartesian (knots , qn, qw, **geometry**) % quadrature rule : the points where we want to evaluate the function. qn, qw could be gauss nodes, for instance
 
-**space** = sp_nurbs (**geometry**.nurbs, **msh**) % information to compute the basis functions of the descrete space V_h
+**space** = sp_nurbs (**geometry**.nurbs, **msh**) % information to compute the basis functions of the descrete space V_h. We take **geometry**.nurbs to parametrize the parametric domain to the physical domain and to parametrize v_h
 
 **geometry** : information to evaluate **F** and its derivatives
 
