@@ -1,0 +1,168 @@
+% TU Darmstadt
+% Institute Theorie Elektromagnetischer Felder (TEMF)
+%
+% macros: Finite Integration, Elements and Circuit 
+% author: Thorben Casper 
+% E-Mail: Casper@gsc.tu...
+
+%%% FIT
+
+%% FIT bow notation
+\catcode`@=11
+\newcommand{\frownfill}{\ensuremath{\scriptscriptstyle\m@th\mathord\frown}}
+\newcommand{\bow}[1]{\ensuremath{\vbox{\m@th\ialign{##\crcr
+      \hfil\frownfill\hfil\crcr\noalign{\kern-0.2\p@\nointerlineskip}
+      $\hfil\displaystyle{#1}\hfil$\crcr}}}}
+\newcommand{\bbow}[1]{\ensuremath{\vbox{\m@th\ialign{##\crcr
+     \hfil\frownfill\hfil\crcr\noalign{\kern-0.7\p@\nointerlineskip}
+     \hfil\frownfill\hfil\crcr\noalign{\kern-0.3\p@\nointerlineskip}
+      $\hfil\displaystyle{#1}\hfil$\crcr}}}}
+\newcommand{\widefrownfill}{\ensuremath{\m@th\mathord\frown}}
+\newcommand{\widebow}[1]{\ensuremath{\vbox{\m@th\ialign{##\crcr
+      \hfil\widefrownfill\hfil\crcr\noalign{\kern-0.9\p@\nointerlineskip}
+      $\hfil\displaystyle{#1}\hfil$\crcr}}}}
+\newcommand{\widebbow}[1]{\ensuremath{\vbox{\m@th\ialign{##\crcr
+     \hfil\widefrownfill\hfil\crcr\noalign{\kern-1.8\p@\nointerlineskip}
+     \hfil\widefrownfill\hfil\crcr\noalign{\kern-0.9\p@\nointerlineskip}
+      $\hfil\displaystyle{#1}\hfil$\crcr}}}}
+
+\newcommand{\volt}[1]{\protect\bow{#1}}
+\newcommand{\widevolt}[1]{\protect\widebow{#1}}
+\newcommand{\flux}[1]{\protect\bbow{#1}}
+
+%% Zero forms
+\newcommand{\vphi}{\ensuremath{\boldsymbol{\varphi}}}
+\newcommand{\vpsi}{\ensuremath{\mathbf{\psi}}}
+\newcommand{\nullVec}{\ensuremath{\mathbf{0}}}
+\newcommand{\T}{\ensuremath{\mathbf{T}}}
+
+%% One forms
+\newcommand{\efit}{\ensuremath{\volt{\mathrm{\mathbf{e}}}}}
+\newcommand{\afit}{\ensuremath{\volt{\mathrm{\mathbf{a}}}}}
+\newcommand{\hfit}{\ensuremath{\volt{\mathrm{\mathbf{h}}}}}
+\newcommand{\mfit}{\ensuremath{\widevolt{\mathrm{\mathbf{m}}}}}
+\newcommand{\tfit}{\ensuremath{\volt{\mathrm{\mathbf{t}}}}}
+
+% local components
+\newcommand{\efitloc}{\ensuremath{\volt{e}}}
+\newcommand{\afitloc}{\ensuremath{\volt{a}}}
+\newcommand{\hfitloc}{\ensuremath{\volt{h}}}
+
+%% Two forms
+\newcommand{\bfit}{\ensuremath{\flux{\mathrm{\mathbf{b}}}}}
+\newcommand{\jfit}{\ensuremath{\flux{\mathrm{\mathbf{j}}}}}
+\newcommand{\dfit}{\ensuremath{\flux{\mathrm{\mathbf{d}}}}}
+
+% local components
+\newcommand{\bfitloc}{\ensuremath{\flux{b}}}
+\newcommand{\dfitloc}{\ensuremath{\flux{d}}}
+\newcommand{\jfitloc}{\ensuremath{\flux{j}}}
+
+%% Three forms
+\newcommand{\qfit}{\ensuremath{\mathrm{\mathbf{q}}}}
+
+%% Material Matrices
+\newcommand{\Deps}{\ensuremath{\mathbf{D}_{\varepsilon}}}
+\newcommand{\Dkap}{\ensuremath{\mathbf{D}_{\kappa}}}
+\newcommand{\Dmu}{\ensuremath{\mathbf{D}_{\mu}}}
+\newcommand{\Dnu}{\ensuremath{\mathbf{D}_{\nu}}}
+\newcommand{\Depsi}{\ensuremath{\mathbf{D}_{\varepsilon}^{-1}}}
+\newcommand{\Dmui}{\ensuremath{\mathbf{D}_{\mu^{-1}}}}
+\newcommand{\Meps}{\ensuremath{\mathbf{M}_{\varepsilon}}}
+\newcommand{\Mkap}{\ensuremath{\mathbf{M}_{\kappa}}}
+\newcommand{\Msigma}{\ensuremath{\mathbf{M}_{\sigma}}}
+\newcommand{\Mmu}{\ensuremath{\mathbf{M}_{\mu}}}
+\newcommand{\Mnu}{\ensuremath{\mathbf{M}_{\nu}}}
+\newcommand{\Mepsi}{\ensuremath{\mathbf{M}_{\varepsilon}^{-1}}}
+\newcommand{\Mmui}{\ensuremath{\mathbf{M}_{\mu^{-1}}}}
+\newcommand{\Dh}{\ensuremath{\mathbf{D}_h}}
+\newcommand{\Mh}{\ensuremath{\mathbf{M}_h}}
+\newcommand{\Drhoc}{\ensuremath{\mathbf{D}_{\rho,c}}}
+\newcommand{\Mrhoc}{\ensuremath{\mathbf{M}_{\rho c}}}
+\newcommand{\Dlambda}{\ensuremath{\mathbf{D}_{\lambda}}}
+\newcommand{\Mlambda}{\ensuremath{\mathbf{M}_{\lambda}}}
+
+%% Stiffness matrices
+\newcommand{\K}{\ensuremath{\mathbf{K}}}
+\newcommand{\Kalpha}{\ensuremath{\mathbf{K}_\alpha}}
+\newcommand{\Knu}{\ensuremath{\mathbf{K}_\nu}}
+\newcommand{\Ksigma}{\ensuremath{\mathbf{K}_\sigma}}
+\newcommand{\Keps}{\ensuremath{\mathbf{K}_\varepsilon}}
+\newcommand{\Kmu}{\ensuremath{\mathbf{K}_\mu}}
+
+%% Discretization
+\newcommand{\du}{\ensuremath{\Delta u}}
+\newcommand{\dv}{\ensuremath{\Delta v}}
+\newcommand{\dw}{\ensuremath{\Delta w}}
+\newcommand{\dud}{\ensuremath{\Delta \widetilde{u}}}
+\newcommand{\dvd}{\ensuremath{\Delta \widetilde{v}}}
+\newcommand{\dwd}{\ensuremath{\Delta \widetilde{w}}}
+\newcommand{\dt}{\ensuremath{\Delta t}}
+\newcommand{\np}{\ensuremath{N_p}}
+
+%% Topological Matrices
+\newcommand{\derivfit}{\ensuremath{\mathbf{P}}}
+\newcommand{\divfit}{\ensuremath{\mathbf{S}}}
+\newcommand{\divdfit}{\ensuremath{\widetilde{\mathbf{S}}}}
+\newcommand{\curlfit}{\ensuremath{\mathbf{C}}}
+\newcommand{\curldfit}{\ensuremath{\widetilde{\mathbf{C}}}}
+\newcommand{\gradfit}{\ensuremath{\mathbf{G}}}
+\newcommand{\neggradfit}{\ensuremath{\widetilde{\mathbf{S}}^\top}}
+
+%% Geometric Quantities
+\newcommand{\edgefit}{\ensuremath{L}}
+\newcommand{\edgedfit}{\ensuremath{\widetilde{L}}}
+\newcommand{\DS}{\ensuremath{\mathbf{D}_S}}
+\newcommand{\DSd}{\ensuremath{\mathbf{\widetilde{D}}_S}}
+\newcommand{\facetfit}{\ensuremath{A}}
+\newcommand{\facetdfit}{\ensuremath{\widetilde{A}}}
+\newcommand{\DA}{\ensuremath{\mathbf{D}_A}}
+\newcommand{\DAd}{\ensuremath{\mathbf{\widetilde{D}}_A}}
+\newcommand{\volumefit}{\ensuremath{V}}
+\newcommand{\volumedfit}{\ensuremath{\widetilde{V}}}
+\newcommand{\DV}{\ensuremath{\mathbf{D}_V}}
+\newcommand{\DVd}{\ensuremath{\mathbf{\widetilde{D}}_V}}
+
+
+%%% FEM
+
+%%% Circuits
+\newcommand{\Abf}{\ensuremath{\mathbf{A}}}
+\newcommand{\Abft}{\ensuremath{\widetilde{\Abf}}}
+\newcommand{\AbfR}{\ensuremath{\Abf_\text{R}}}
+\newcommand{\AbfRel}{\ensuremath{\Abf_\text{R}^\text{el}}}
+\newcommand{\AbfRth}{\ensuremath{\Abf_\text{R}^\text{th}}}
+\newcommand{\AbfC}{\ensuremath{\Abf_\text{C}}}
+\newcommand{\AbfCel}{\ensuremath{\Abf_\text{C}^\text{el}}}
+\newcommand{\AbfCth}{\ensuremath{\Abf_\text{C}^\text{th}}}
+\newcommand{\AbfI}{\ensuremath{\Abf_\text{I}}}
+\newcommand{\AbfIel}{\ensuremath{\Abf_\text{I}^\text{el}}}
+\newcommand{\AbfIth}{\ensuremath{\Abf_\text{I}^\text{th}}}
+\newcommand{\AbftR}{\ensuremath{\Abft_\text{R}}}
+\newcommand{\AbftC}{\ensuremath{\Abft_\text{C}}}
+\newcommand{\AbftI}{\ensuremath{\Abft_\text{I}}}
+\newcommand{\AbfQ}{\ensuremath{\Abf_\text{Q}}}
+\newcommand{\Ibf}{\ensuremath{\mathbf{I}}}
+\newcommand{\IbfR}{\ensuremath{\Ibf_\text{R}}}
+\newcommand{\IbfC}{\ensuremath{\Ibf_\text{C}}}
+\newcommand{\IbfI}{\ensuremath{\Ibf_\text{I}}}
+\newcommand{\Ibfs}{\ensuremath{\Ibf_\text{s}}}
+\newcommand{\Ubf}{\ensuremath{\mathbf{V}}}
+\newcommand{\UbfR}{\ensuremath{\Ubf_\text{R}}}
+\newcommand{\UbfC}{\ensuremath{\Ubf_\text{C}}}
+\newcommand{\UbfI}{\ensuremath{\Ubf_\text{I}}}
+\newcommand{\UbfCdot}{\ensuremath{\dot{\Ubf}_\text{C}}}
+\newcommand{\PbfQ}{\ensuremath{\mathbf{P}_\text{Q}}}
+\newcommand{\vbf}{\ensuremath{\mathbf{v}}}
+\newcommand{\vbft}{\ensuremath{\widetilde{\vbf}}}
+\newcommand{\vbfel}{\ensuremath{\mathbf{v}^\text{el}}}
+\newcommand{\vbfth}{\ensuremath{\mathbf{v}^\text{th}}}
+\newcommand{\Vbf}{\ensuremath{\mathbf{V}}}
+\newcommand{\VbfR}{\ensuremath{\Vbf_\text{R}}}
+\newcommand{\VbfC}{\ensuremath{\Vbf_\text{C}}}
+\newcommand{\Cbf}{\ensuremath{\mathbf{C}}}
+\newcommand{\Cbfel}{\ensuremath{\Cbf^\text{el}}}
+\newcommand{\Cbfth}{\ensuremath{\Cbf^\text{th}}}
+\newcommand{\Gbf}{\ensuremath{\mathbf{G}}}
+\newcommand{\Gbfel}{\ensuremath{\Gbf^\text{el}}}
+\newcommand{\Gbfth}{\ensuremath{\Gbf^\text{th}}}

@@ -1,0 +1,126 @@
+% TU Darmstadt
+% Institute Theorie Elektromagnetischer Felder (TEMF)
+%
+% macros: Vectors, Matrices and Projectors 
+% author: Idoia Cortes Garcia
+% E-Mail: Cortes@gsc.tu...
+
+
+%%% Vectors
+
+%% Unit vectors
+\newcommand{\en}{\ensuremath{\vec{e}_n}}		%-% Ged
+\newcommand{\ephi}{\ensuremath{ \vec{e}_\varphi} }		%-% Ged
+\newcommand{\et}{\ensuremath{\vec{e}_t}}		%-% Ged	
+\newcommand{\er}{\ensuremath{ \vec{e}_r} }		%-% Ged
+\newcommand{\erho}{\ensuremath{ \vec{e}_\varrho} }		%-% Ged	
+\newcommand{\etheta}{\ensuremath{ \vec{e}_\vartheta} }		%-% Ged	
+\newcommand{\eu}{\ensuremath{ \vec{e}_u} }		%-% Ged		
+\newcommand{\ev}{\ensuremath{ \vec{e}_v} }		%-% Ged
+\newcommand{\ew}{\ensuremath{ \vec{e}_w} }		%-% Ged	
+\newcommand{\ex}{\ensuremath{ \vec{e}_x} }		%-% Ged
+\newcommand{\ey}{\ensuremath{ \vec{e}_y} }		%-% Ged
+\newcommand{\ez}{\ensuremath{ \vec{e}_z} }		%-% Ged
+\newcommand{\qex}{\ensuremath{ \mathbf{e}_x }}     %-% Ged
+\newcommand{\qey}{\ensuremath{ \mathbf{e}_y }}     %-% Ged
+\newcommand{\qez}{\ensuremath{ \mathbf{e}_z }}     %-% Ged
+\newcommand{\qer}{\ensuremath{ \mathbf{e}_r }}     %-% Ged
+\newcommand{\qetheta}{\ensuremath{ \mathbf{e}_\theta }}    %-% Ged
+\newcommand{\qen}{\ensuremath{ \mathbf{e}_n }}     %-% Ged
+\newcommand{\qet}{\ensuremath{ \mathbf{e}_t }}     %-% Ged
+						
+		
+	
+
+%% Real vectors
+\newcommand{\Av}{\ensuremath{ \vec{A} }}		%-% Ged
+\newcommand{\Bv}{\ensuremath{ \vec{B} }}		%-% Ged
+\newcommand{\Dv}{\ensuremath{ \vec{D} }}		%-% Ged	
+\newcommand{\Ev}{\ensuremath{ \vec{E} }}		%-% Ged
+\newcommand{\Fv}{\ensuremath{ \vec{F} }}		%-% Ged				
+\newcommand{\Hv}{\ensuremath{ \vec{H} }}		%-% Ged
+\newcommand{\Jv}{\ensuremath{ \vec{J} }}		%-% Ged	
+\newcommand{\Mv}{\ensuremath{ \vec{M} }}		%-% Ged				
+\newcommand{\Pv}{\ensuremath{ \vec{P} }}		%-% Ged								
+\newcommand{\Sv}{\ensuremath{ \vec{S} }}		%-% Ged
+
+%% Complex Vectors
+\newcommand{\Ac}{\ensuremath{ \underline{A}}}		%-% Ged
+\newcommand{\Azc}{\ensuremath{ \underline{A}_z }}		%-% Ged
+\newcommand{\Avc}{\ensuremath{ \underline{\vec{A}} }}		%-% Ged
+\newcommand{\Bc}{\ensuremath{ \underline{B} }}		%-% Ged
+\newcommand{\Bvc}{\ensuremath{ \underline{\vec{B}} }}		%-% Ged
+\newcommand{\Dc}{\ensuremath{ \underline{D} }}		%-% Ged
+\newcommand{\Dvc}{\ensuremath{ \underline{\vec{D}} }}		%-% Ged
+\newcommand{\Ec}{\ensuremath{ \underline{E} }}		%-% Ged
+\newcommand{\Evc}{\ensuremath{ \underline{\vec{E}} }}		%-% Ged	
+\newcommand{\Exc}{\ensuremath{ \underline{E}_x }}		%-% Ged
+\newcommand{\Eyc}{\ensuremath{ \underline{E}_y }}		%-% Ged		
+\newcommand{\Ezc}{\ensuremath{ \underline{E}_z }}		%-% Ged
+\newcommand{\Hc}{\ensuremath{ \underline{H} }}		%-% Ged				
+\newcommand{\Hvc}{\ensuremath{ \underline{\vec{H}} }}		%-% Ged
+\newcommand{\Hxc}{\ensuremath{ \underline{H}_x }}		%-% Ged		
+\newcommand{\Hyc}{\ensuremath{ \underline{H}_y }}		%-% Ged		
+\newcommand{\Hzc}{\ensuremath{ \underline{H}_z }}		%-% Ged
+\newcommand{\Jc}{\ensuremath{ \underline{J} }}		%-% Ged
+\newcommand{\Jvc}{\ensuremath{ \underline{\vec{J}} }}		%-% Ged
+\newcommand{\Jxc}{\ensuremath{ \underline{J}_x }}		%-% Ged		
+\newcommand{\Jyc}{\ensuremath{ \underline{J}_y }}		%-% Ged		
+\newcommand{\Jzc}{\ensuremath{ \underline{J}_z }}		%-% Ged
+\newcommand{\Mvc}{\ensuremath{ \underline{\vec{M}} }}		%-% Ged	
+\newcommand{\Pc}{\ensuremath{ \underline{P} }}		%-% Ged	
+\newcommand{\Phic}{\ensuremath{ \underline{\Phi} }}		%-% Ged			
+\newcommand{\Pvc}{\ensuremath{ \underline{\vec{P}} }}		%-% Ged				
+\newcommand{\Svc}{\ensuremath{ \underline{\vec{S}} }}		%-% Ged
+																		
+
+
+%% Other Vectors
+\newcommand{\kv}{\ensuremath{ \vec{k} }}		%-% Ged
+\newcommand{\nv}{\ensuremath{ \vec{n} }}		%-% Ged	
+\newcommand{\rv}{\ensuremath{ \vec{r} }}		%-% Ged
+\newcommand{\vv}{\ensuremath{ \vec{v} }}		%-% Ged
+
+%% Algebraic Vectors (nx1 Matrices)
+\newcommand{\amat}{\ensuremath{ \mathbf{a} }}			
+\newcommand{\imat}{\ensuremath{ \mathbf{i} }}
+\newcommand{\rmat}{\ensuremath{ \mathbf{r} }}		
+\newcommand{\umat}{\ensuremath{ \mathbf{u} }}		
+\newcommand{\vmat}{\ensuremath{ \mathbf{v} }}		
+\newcommand{\xmat}{\ensuremath{ \mathbf{x} }}		
+
+
+%%% Matrices
+
+%% Algebraic Matrices
+\newcommand{\Amat}{\ensuremath{ \mathbf{A} }}		
+\newcommand{\Bmat}{\ensuremath{ \mathbf{B} }}			
+\newcommand{\Cmat}{\ensuremath{ \mathbf{C} }}		
+\newcommand{\Dmat}{\ensuremath{ \mathbf{D} }}
+\newcommand{\Emat}{\ensuremath{ \mathbf{E} }}
+\newcommand{\Kmat}{\ensuremath{ \mathbf{K} }}		
+\newcommand{\Lmat}{\ensuremath{ \mathbf{L} }}		
+\newcommand{\Mmat}{\ensuremath{ \mathbf{M} }}	
+\newcommand{\Nmat}{\ensuremath{ \mathbf{N} }}	
+\newcommand{\Pmat}{\ensuremath{ \mathbf{P} }}	
+\newcommand{\Qmat}{\ensuremath{ \mathbf{Q} }}	
+\newcommand{\Rmat}{\ensuremath{ \mathbf{R} }}	
+\newcommand{\Umat}{\ensuremath{ \mathbf{U} }}	
+\newcommand{\Vmat}{\ensuremath{ \mathbf{V} }}		
+\newcommand{\Xmat}{\ensuremath{ \mathbf{X} }}		
+\newcommand{\Zmat}{\ensuremath{ \mathbf{Z} }}		
+\newcommand{\Imat}{\ensuremath{ \mathbf{I} }}
+\newcommand{\eye}{\ensuremath{ \mathbf{I} }} %-% Was defined with \textbackslash vect\{I\}, now defined with \textbackslash mathbf\{I\}
+\newcommand{\Id}{\ensuremath{ \eye }}
+
+%% Small matrices shortcuts
+\newcommand{\bfn}{ \ensuremath{ \mathbf{0} } }
+\newcommand{\mtaa}[1]{\ensuremath{ \left[\begin{array}{c}{#1}\end{array}\right] }}
+\newcommand{\mtab}[2]{\ensuremath{ \left[\begin{array}{cc}{#1}&{#2}\end{array}\right] }}
+\newcommand{\mtba}[2]{\ensuremath{ \left[\begin{array}{c}{#1}\\ {#2}\end{array}\right] }}
+\newcommand{\mtbb}[4]{\ensuremath{ \left[\begin{array}{cc}{#1}&{#2}\\ {#3}&{#4}\end{array}\right] }}
+\newcommand{\mtdb}[2]{ \ensuremath{ \left[\begin{array}{cc}{#1}& \bfn\\ \bfn &{#2}\end{array}\right] }}
+\newcommand{\mtsb}[2]{ \ensuremath{ \left[\begin{array}{cc}\bfn &{#1}\\ {#2}& \bfn\end{array}\right] }}
+
+% Projectors
+

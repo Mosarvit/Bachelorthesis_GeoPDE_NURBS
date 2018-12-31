@@ -1,0 +1,203 @@
+%presentation about Gjonaj_20003
+
+\documentclass[colorbacktitle,inverttitle,landscape,presentation,
+	english,
+	aspectratio=43, %43 or 169, 1610
+	accentcolor=tud9b, %tud9b (temf) or tud5b (gsce) 
+]{tudbeamer}
+
+%%additional packages
+%%language:
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%%math:
+\usepackage{amsmath}
+\usepackage{mathtools}
+%%tikz:
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage[siunitx,americaninductors]{circuitikz}
+\usepackage{siunitx}
+%%pgfplots:
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\usepgfplotslibrary{patchplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}\usepgfplotslibrary{units}
+%%scaling:
+\usepackage{adjustbox}
+%%temf:
+\usepackage{temf-finite}
+\usepackage{temf-fields}
+\usepackage{temf-matrixvector}
+\usepackage{notInTemfMacros}
+
+%needs to come last
+\usepackage{temfbeamer}
+
+%remove TU logo from every slide but the title
+\setbeamertemplate{headline}[TUD theme nologo] 
+
+%set date
+\date{May 30, 2018}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Conformal Modeling of Space-Charge-Limited Emission from Curved Boundaries in Particle Simulations}
+
+\subtitle{\\[0.3\baselineskip]
+	Peter Förster\\[0.3\baselineskip]
+{\small Jacopo Corno, M.Sc. and Prof. Dr. Sebastian Schöps}\\
+[0.3\baselineskip]
+{\tiny Proseminar ETiT}\\[0.3em]
+	\mbox{\scriptsize}~}
+	
+\institute[TU Darmstadt | Fachbereich 18 | Institut Theorie Elektromagnetischer Felder]{Institut für Theorie Elektromagnetischer Felder, TU Darmstadt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+	
+\begin{titleframe}
+	\tudtitle[images/temf_logo.pdf]{images/temf_background.jpg} 
+	%\tudtitle[images/gsce_logo.pdf]{images/gsce_background.jpg}
+	\end{titleframe}
+	
+\begin{frame}
+	\frametitle{Outline}
+	\tableofcontents%[currentsection,subsectionstyle=show/show/hide]
+\end{frame}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+\section{Motivation}
+\begin{frame}
+\frametitle{Motivation}
+	\begin{itemize}
+	\item electromagnetic Particle-In-Cell simulations are used to investigate particle physics in accelerators (e.g. FD, FDTD, FIT on orthogonal grids)
+	
+	\item modeling curved material boundaries on such grids presents difficulties
+	
+	\item low accuracy of boundary fields at curved emission surfaces greatly affects overall performance
+	
+	\item boundary-conformal approach retains advantages and provides accurate solutions for curved emission boundaries
+	\end{itemize}
+\end{frame}
+		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Problem Setting}
+\begin{frame}
+\frametitle{Mathematical Model}
+	\begin{itemize}
+	\item the model equations read
+	\begin{align*}
+	\frac{\d\rmat_i}{\d t} &= \vmat_i\\
+	\frac{\d m_e\vmat_i}{\d t} &= e(\Emat + \vmat_i\times\Bmat),\quad i = 1\dots N
+	\end{align*}
+	where $e$ is the electron charge, $m_e$ is the relativistic electron mass; $\rmat_i$ and $\vmat_i$ denote particle positions and velocities respectively
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mathematical Model}
+	\begin{itemize}	
+	\item only taking into account electrostatic particle-particle interactions the space-charge field $\Emat$ is determinded by
+	\begin{align*}
+	\nabla(\eps\Emat) &= \frac{1}{\eps_0}\sum_i^N q_i \delta(\rmat-\rmat_i)\\
+	\Emat &= -\nabla \phifield,
+	\end{align*}
+	where $\eps$ is the permittivity and $q_i$ the charge of the $i$-th particle	
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Space Charge Limited Emission}
+	\begin{itemize}
+	\item the Child-Langmuir diode equation reads
+	\begin{align*}
+	J_\mathrm{CL} = \left(\frac{4 \eps_0}{9}\right) \sqrt{\frac{2 e}{m_e}} \frac{\delta \phifield_b^{3/2}}{\delta d^2},
+	\end{align*}
+	where $J_\mathrm{CL}$ is the current at the emission surface and $\delta\phifield_b$ the local potential difference at a distance $\delta d$ from the surface
+	\end{itemize}		
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Conformal Method}
+\begin{frame}
+\frametitle{Discrete Field Equations}	
+	\begin{itemize}
+	\item using the Finite Integration Technique the discrete formulation of the equations reads
+	\begin{align*}
+	\divfit \dfit &= \qfit\\
+	\dfit_i &= \iint_{\Delta A_i} \eps(\nabla \phifield)\dA
+	\end{align*}
+	
+	\item $\dfit$ denotes the vector of electrostatic fluxes, $\divfit$ the discrete $\div$-operator, $\qfit$ the total charge contained in each dual cell and $\Delta A_i$ the area element of the $i$-th dual cell face
+	
+	\item discretization error stems only from approximating the flux integrals $\dfit_i$ using potential grid values $\phi_i$
+	
+	\item conformal approach takes into account the geometry of the boundary and minimizes error
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Particle Injection}
+	\begin{itemize}
+	\item emitted particles are assigned to predetermined positions
+	
+	\item local currents associated to the individual particles are calculated using Child's law
+	
+	\item consistency between the currents and the field solution is enforced through iteration until constant emission current is established
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Results}
+\begin{frame}
+\frametitle{Results}
+	\begin{itemize}
+	\item steady state emission current is observed on the source surface for different mesh resolutions
+	
+	\item using a staircase approximation 1.5 mio. mesh nodes are needed for convergence
+	
+	\item staircase model also introduces numerical oscillations caused by low order field approximation at the emission surface
+	
+	\item the relative error for fine to moderate mesh sizes varies between 10-25\%
+	
+	\item using the conformal method only 130k nodes are needed for convergence
+	
+	\item computational effort can be reduced since grid-field-equations contain fewer nodes
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Conclusion}
+	\begin{itemize}
+	\item boundary conformal discretization of electrostatic field equations and boundary conformal particle injection technique
+	
+	\item method enforces field-space-charge consistency from Child's law
+	
+	\item solution of a Pierce gun model shows advantages over staircase approximation
+	\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{List of References}
+	\begin{enumerate}
+	\item[{[1]}]
+E. Gjonaj, T. Lau and T. Weiland. Conformal Modeling of Space-Charge-Limited Emission from Curved Boundaries in Particle Simulations. In Proceedings of the 2003 Particle Accelerator Conference May 12-16, 2003 in Portland, OR, USA.
+
+	\item[{[2]}]
+B. Krietenstein, R. Schuhmann, P. Thoma and T. Weiland. The Perfect Boundary Approximation Technique Facing the Big Challenge of High Precision Field Computation. In Proceedings of the XIX International Linear Accelerator Conference, 1998.
+	\end{enumerate}
+\end{frame}
+	
+	
+\end{document}

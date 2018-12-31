@@ -1,0 +1,157 @@
+% dependecies
+\RequirePackage{cancel}
+\RequirePackage{pgfplots}
+\usepgfplotslibrary{patchplots}
+
+% configure the boxes as you like 
+\useinnertheme{rectangles}
+\definecolor{lightgray}{rgb}{.95, .95, .95}
+\colorlet{temf}{tud9b}	% TEMF color is tud9b
+\colorlet{gsce}{tud5b}	% GSCE color is tud5b
+\setbeamercolor{block body}{bg=lightgray,fg=black}
+\setbeamercolor{block title}{fg=white, bg=tudaccent}
+\setbeamertemplate{blocks}[shadow=true]
+
+% move the item bullet up
+\setbeamertemplate{itemize item}{\raisebox{0.1em}{{\tiny$\blacksquare$}}}
+\setbeamertemplate{itemize subitem}{\raisebox{0.1em}{{\tiny$\blacksquare$}}}
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=1.5em\raisebox{0.1em}{\color{tudaccent}\tiny$\blacksquare$}\hskip0.5em\inserttocsubsection\par}
+
+% command to switch to default color
+\newcommand{\tudnormalcolor}{\TUD@normalcolor}
+
+% allow cancellation with beamer
+\newcommand<>{\cncl}[1]{\alt#2{\color{alert}\cancel{\tudnormalcolor #1}\vphantom{#1}}{#1}}
+
+% adapt slide title
+\let\frametitlex\frametitle
+\renewcommand{\frametitle}[1]{\frametitlex{\hspace*{-0.7em}%
+	\begin{minipage}[c][1.3cm][c]{12cm}#1\end{minipage}%
+}}
+
+% adapt margin
+\setbeamersize{text margin left=1.5em,text margin right=1.5em}
+
+% rescale image for title slide
+\newcommand{\tudtitle}[2][]{%
+	\begin{center}\vspace{-1.88em}\hspace*{-\paperwidth}%
+		\includegraphics[width=0.95\paperwidth,height=\textheight+1.4em]{#2}%
+	\hspace*{-\paperwidth}\vspace*{-\textheight}\end{center}%
+	\ifthenelse{\equal{#1}{}}{}{
+		\begin{center}\hspace*{-\paperwidth}%
+		\hspace*{0.7125\paperwidth}{\includegraphics[width=0.2375\paperwidth]{#1}}%
+		\hspace*{-\paperwidth}~\\\end{center}%
+	}
+}
+
+\defbeamertemplate{headline}{TUD theme nologo}
+{
+  \leavevmode%
+  \begin{center}
+  \shortstack[c]{%
+    \TUD@rules\\%[-\baselineskip]%
+    \leavevmode%
+    \vspace{-0.6pt}%
+    \vspace*{-0.0194\paperheight}\\
+    \begin{beamercolorbox}[wd=\TUD@rulelength,ht=\TUD@frametitleboxheight,dp=0ex]{frametitle}%
+    \end{beamercolorbox}\\%
+    \vspace{-0.8pt}%
+    \vspace*{-0.0194\paperheight}\\
+    \tudrule%
+  }%
+  \end{center}
+}
+
+
+% define colors for barplot
+\pgfplotscreateplotcyclelist{tudbarplot cycle}{%
+	{draw=tud1d,		fill=tud1b},
+	{draw=tud3d,		fill=tud3b},
+	{draw=tud5d,		fill=tud5b},
+	{draw=tud7d,		fill=tud7b},
+	{draw=tud9d,		fill=tud9b},
+	{draw=tud11d,	 fill=tud11b}, 
+	{draw=tud2d,		fill=tud2b},
+	{draw=tud4d,		fill=tud4b},
+	{draw=tud6d,		fill=tud6b},
+	{draw=tud8d,		fill=tud8b},
+	{draw=tud10d,	 fill=tud10b},
+}
+% define colors for lineplot
+\pgfplotscreateplotcyclelist{tudlineplot cycle}{%
+	{tud1b, mark=*, mark size=1.5pt, thick},
+	{tud3b, mark=square*, mark size=1.3pt, thick},
+	{tud5b, mark=triangle*, mark size=1.5pt, thick},
+	{tud7b, mark=diamond*, mark size=1.5pt, thick},
+	{tud9b, mark=*, mark size=1.5pt, thick},
+	{tud11b, mark=square*, mark size=1.3pt, thick},
+	{tud2b, mark=triangle*, mark size=1.5pt, thick},
+	{tud4b, mark=diamond*, mark size=1.5pt, thick},
+	{tud6b, mark=*, mark size=1.5pt, thick},
+	{tud8b, mark=square*, mark size=1.3pt, thick},
+	{tud10b, mark=triangle*, mark size=1.5pt, thick},
+}
+
+% make a nice line and bar plots
+% taken from Metropolis beamer theme
+% https://github.com/matze/mtheme
+\pgfplotsset{
+	colormap={tudcolormap}{
+		color(0cm)=(tud1b);
+		color(1cm)=(tud6b);
+		color(2cm)=(tud8b);
+		color(3cm)=(tud9b)
+	},
+	tud3dplot/.style={
+		tudbaseplot,
+		xmajorgrids=true,
+		ymajorgrids=true,
+		major grid style={dotted},
+		axis line style = thin,
+		axis x line*=box,
+		axis y line*=box,
+	},
+	tudlineplot/.style={
+		tudbaseplot,
+		xmajorgrids=true,
+		ymajorgrids=true,
+		major grid style={dotted},
+		axis line style = thin,
+		axis x line*=bottom,
+		axis y line*=left,
+		legend style={cells={anchor=west}},
+		cycle list name=tudlineplot cycle,
+	},
+	tudbarplot base/.style={
+		tudbaseplot,
+		bar width=6pt,
+		axis y line*=none,
+	},
+	tudbarplot/.style={
+		tudbarplot base,
+		ybar,
+		xmajorgrids=false,
+		ymajorgrids=true,
+		area legend,
+		legend image code/.code={\draw[#1] (0cm,-0.1cm) rectangle (0.15cm,0.1cm);},
+		cycle list name=tudbarplot cycle,
+	},
+	horizontal tudbarplot/.style={
+		tudbarplot base,
+		xmajorgrids=true,
+		ymajorgrids=false,
+		xbar stacked,
+		area legend,
+		legend image code/.code={\draw[#1] (0cm,-0.1cm) rectangle (0.15cm,0.1cm);},
+		cycle list name=tudbarplot cycle,
+	},
+	tudbaseplot/.style={
+		colormap name=tudcolormap,
+		legend style={fill=white,cells={anchor=west}},
+		x tick label style={font=\footnotesize},
+		y tick label style={font=\footnotesize},
+		legend style={font=\footnotesize},
+		major grid style={dotted},axis x line*=bottom
+	},
+	disable thousands separator/.style={/pgf/number format/.cd,1000 sep={}},
+}

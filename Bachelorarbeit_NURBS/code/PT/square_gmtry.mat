@@ -1,0 +1,78 @@
+# Created by Octave 4.2.2, Fri May 25 19:27:23 2018 CEST <peter@peter-fedora>
+# name: geo
+# type: scalar struct
+# ndims: 2
+ 1 1
+# length: 6
+# name: form
+# type: sq_string
+# elements: 1
+# length: 7
+B-NURBS
+
+
+# name: dim
+# type: scalar
+4
+
+
+# name: number
+# type: matrix
+# rows: 1
+# columns: 2
+ 2 2
+
+
+# name: coefs
+# type: matrix
+# ndims: 3
+ 4 2 2
+ 0
+ 0
+ 0
+ 1
+ 1
+ 0
+ 0
+ 1
+ 0
+ 1
+ 0
+ 1
+ 1
+ 1
+ 0
+ 1
+
+
+# name: knots
+# type: cell
+# rows: 1
+# columns: 2
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 4
+ 0 0 1 1
+
+
+
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 4
+ 0 0 1 1
+
+
+
+
+
+# name: order
+# type: matrix
+# rows: 1
+# columns: 2
+ 2 2
+
+
+
+
